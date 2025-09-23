@@ -1,0 +1,16 @@
+[data-filter="light"] {
+  --bg-col: rgb(192, 195, 255);
+  --boarder-color: rgb(141, 131, 243);
+  --font-family: "Montserrat", sans-serif;
+  color: rgb(91, 85, 160);
+}
+[data-filter="dark"] {
+  --bg-col: rgb(91, 85, 160);
+  --boarder-color: rgb(223, 224, 251);
+  --font-family: "Montserrat", sans-serif;
+  color: rgb(223, 224, 251);
+}
+.main_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
