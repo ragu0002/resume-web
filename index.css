@@ -71,7 +71,11 @@ a {
   margin-top: 10px;
 }
 header {
+  display: flex;
+  justify-content: end;
   height: 100px;
+  padding: 30px 20px 40px 20px;
+  border-bottom: 0.5px solid var(--boarder-color);
 }
 body {
   background-color: var(--bg-col);
@@ -85,6 +89,7 @@ main {
   width: 700px;
   margin-bottom: 60px;
   gap: 80px;
+  padding-top: 40px;
 }
 img {
   width: 300px;
@@ -120,26 +125,29 @@ img {
 }
 .img-container div {
   width: 100%;
-  display: block;
 }
 .hidden {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%; /* 100% of img-container */
   height: 100%; /* full height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(255, 255, 255);
   opacity: 0;
   transition: opacity 0.3s ease;
+  gap: 6px;
   padding: 30px;
   box-sizing: border-box;
   text-align: start;
 }
 
+.kontakt_info {
+  display: flex;
+  justify-content: space-between;
+}
 .img-container:hover .hidden {
   opacity: 1;
 }
@@ -195,4 +203,30 @@ img {
 }
 .software img {
   width: 60px;
+}
+button {
+  border: 0.5 solid var(--boarder-color);
+  border-color: var(--boarder-color);
+  background-color: var(--boarder-color);
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bg-col);
+}
+button:hover {
+  opacity: 80%;
+}
+@media screen and (max-width: 768px) {
+  .landing {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+  .landing img {
+    margin: 0 auto;
+  }
+  .img-container img {
+    height: 250px;
+  }
 }
