@@ -1,15 +1,16 @@
 [data-filter="light"] {
   --bg-col: rgb(251, 241, 208);
-  --boarder-color: rgb(141, 131, 243);
+  --boarder-color: rgb(158, 56, 56);
   --font-family: "ivypresto-display", serif;
   --font-family-secondary: "Montserrat", sans-serif;
   color: rgb(158, 56, 56);
 }
 [data-filter="dark"] {
-  --bg-col: rgb(91, 85, 160);
-  --boarder-color: rgb(223, 224, 251);
-  --font-family: "Montserrat", sans-serif;
-  color: rgb(223, 224, 251);
+  --bg-col: rgb(208, 220, 251);
+  --boarder-color: rgb(31, 42, 85);
+  --font-family: "ivypresto-display", serif;
+  --font-family-secondary: "Montserrat", sans-serif;
+  color: rgb(31, 42, 85);
 }
 
 * {
@@ -27,7 +28,7 @@ h2 {
   font-weight: 100;
 }
 h1 {
-  font-size: 75px;
+  font-size: 3.9rem;
 }
 h3,
 p,
@@ -36,12 +37,32 @@ a {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
 }
+.kontakt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.kontakt a {
+  display: flex;
+  justify-content: space-between;
+}
+.kontakt a img {
+  height: 15px;
+  width: auto;
+}
 h3 {
   text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+p,
+a {
+  font-size: 0.7rem;
+  font-weight: 300;
 }
 .last-name {
   text-align: end;
-  margin-top: -40px;
+  margin-top: -25px;
 }
 .info {
   display: flex;
@@ -61,12 +82,14 @@ main {
 }
 .landing {
   display: flex;
-  width: 650px;
+  width: 700px;
   margin-bottom: 60px;
   gap: 80px;
 }
 img {
-  width: 200px;
+  width: 300px;
+  height: auto;
+  object-fit: cover;
 }
 .projects h2,
 .projects h3 {
@@ -75,16 +98,25 @@ img {
 .scrollbar {
   display: flex;
   width: 100vw;
-  overflow: auto;
+  overflow-x: auto;
   gap: 50px;
-  white-space: nowrap;
+  padding: 20px 0;
 }
 .scrollbar img {
   display: inline-block;
+  height: 400px;
+  width: auto;
 }
 .img-container {
   position: relative;
-  text-align: center;
+  display: inline-block;
+  width: auto;
+  flex: 0 0 auto; /* Let width be auto so it matches content */
+}
+.img-container img {
+  display: block;
+  height: 400px;
+  width: auto;
 }
 .img-container div {
   width: 100%;
@@ -94,23 +126,27 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; /* 100% of img-container */
+  height: 100%; /* full height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(255, 255, 255);
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 10px;
+  padding: 30px;
   box-sizing: border-box;
-  text-align: center;
+  text-align: start;
 }
+
 .img-container:hover .hidden {
   opacity: 1;
 }
 .section-two-container {
+  margin: 40px;
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 .skills,
@@ -135,4 +171,28 @@ img {
 .img3 {
   grid-column: 2 / span 1;
   grid-row: 2 / span 2;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal parts */
+}
+
+.skills div span {
+  height: 10px;
+  background-color: var(--boarder-color);
+  opacity: 0.2;
+}
+
+.skills div span.filled {
+  background-color: var(--boarder-color);
+  opacity: 1;
+}
+.software img {
+  width: 60px;
 }
