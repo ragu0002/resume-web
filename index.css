@@ -1,6 +1,7 @@
 [data-filter="light"] {
   --bg-col: rgb(251, 241, 208);
   --boarder-color: rgb(158, 56, 56);
+  --boarder-color-light: rgba(158, 56, 56, 0.199);
   --font-family: "ivypresto-display", serif;
   --font-family-secondary: "Montserrat", sans-serif;
   color: rgb(158, 56, 56);
@@ -8,6 +9,7 @@
 [data-filter="dark"] {
   --bg-col: rgb(208, 220, 251);
   --boarder-color: rgb(31, 42, 85);
+  --boarder-color-light: rgb(31, 42, 85, 0.199);
   --font-family: "ivypresto-display", serif;
   --font-family-secondary: "Montserrat", sans-serif;
   color: rgb(31, 42, 85);
@@ -32,6 +34,7 @@ h1 {
 }
 h3,
 p,
+li,
 label,
 a {
   font-family: "Montserrat", sans-serif;
@@ -52,12 +55,12 @@ a {
 }
 h3 {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 p,
 a {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 300;
 }
 .last-name {
@@ -88,8 +91,22 @@ main {
   display: flex;
   width: 700px;
   margin-bottom: 60px;
-  gap: 80px;
+  gap: 60px;
   padding-top: 40px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -15rem;
+    right: -2rem;
+    background: var(--boarder-color-light);
+    width: 500px;
+    height: 1200px;
+    border-radius: 100% / 100%;
+    transform: rotate(50deg);
+    z-index: -1;
+  }
 }
 img {
   width: 300px;
@@ -151,16 +168,6 @@ img {
 .img-container:hover .hidden {
   opacity: 1;
 }
-.section-two-container {
-  margin: 40px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-}
-.skills,
-.software {
-  grid-column: 1 / span 1;
-}
 .gallery {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
@@ -180,27 +187,38 @@ img {
   grid-column: 2 / span 1;
   grid-row: 2 / span 2;
 }
+.section-two-container {
+  padding-inline: max(1rem, 50% - 700px/ 2);
+  margin: 40px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto 1fr;
+}
+.skills,
+.software {
+  grid-column: 1;
+}
 .skills {
+  max-width: 500px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    li {
+      font-size: 0.8rem;
+      border: solid 1px var(--boarder-color);
+      border-radius: 15px;
+      padding: 0.3rlh;
+    }
+  }
 }
 
-.skills div {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 equal parts */
-}
-
-.skills div span {
-  height: 10px;
-  background-color: var(--boarder-color);
-  opacity: 0.2;
-}
-
-.skills div span.filled {
-  background-color: var(--boarder-color);
-  opacity: 1;
-}
 .software img {
   width: 60px;
 }
