@@ -95,7 +95,7 @@ main {
   padding-top: 40px;
   position: relative;
 
-  &::after {
+  /*&::after {
     content: "";
     position: absolute;
     top: -15rem;
@@ -106,7 +106,7 @@ main {
     border-radius: 100% / 100%;
     transform: rotate(50deg);
     z-index: -1;
-  }
+  }*/
 }
 img {
   width: 300px;
@@ -234,6 +234,9 @@ button {
 }
 button:hover {
   opacity: 80%;
+}
+svg {
+  color: var(--boarder-color);
 }
 @media screen and (max-width: 768px) {
   .landing {
