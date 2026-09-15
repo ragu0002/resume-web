@@ -1,18 +1,10 @@
 [data-filter="light"] {
-  --bg-col: rgb(251, 241, 208);
-  --boarder-color: rgb(158, 56, 56);
-  --boarder-color-light: rgba(158, 56, 56, 0.199);
+  --bg-col: rgba(255, 255, 253, 1);
+  --boarder-color: rgba(21, 35, 61, 1);
+  --boarder-color-light: rgba(53, 60, 141, 1);
   --font-family: "ivypresto-display", serif;
   --font-family-secondary: "Montserrat", sans-serif;
-  color: rgb(158, 56, 56);
-}
-[data-filter="dark"] {
-  --bg-col: rgb(208, 220, 251);
-  --boarder-color: rgb(31, 42, 85);
-  --boarder-color-light: rgb(31, 42, 85, 0.199);
-  --font-family: "ivypresto-display", serif;
-  --font-family-secondary: "Montserrat", sans-serif;
-  color: rgb(31, 42, 85);
+  color: rgba(53, 60, 141, 1);
 }
 
 * {
@@ -48,6 +40,7 @@ a {
 .kontakt a {
   display: flex;
   justify-content: space-between;
+  color: var(--boarder-color);
 }
 .kontakt a img {
   height: 15px;
@@ -62,7 +55,9 @@ p,
 a {
   font-size: 0.9rem;
   font-weight: 300;
+  text-decoration: none;
 }
+
 .last-name {
   text-align: end;
   margin-top: -25px;
@@ -89,7 +84,7 @@ main {
 }
 .landing {
   display: flex;
-  width: 700px;
+  width: 55vw;
   margin-bottom: 60px;
   gap: 60px;
   padding-top: 40px;
@@ -133,6 +128,7 @@ img {
   position: relative;
   display: inline-block;
   width: auto;
+  cursor: pointer;
   flex: 0 0 auto; /* Let width be auto so it matches content */
 }
 .img-container img {
@@ -152,13 +148,16 @@ img {
   left: 0;
   width: 100%; /* 100% of img-container */
   height: 100%; /* full height */
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(140, 179, 205, 1);
   opacity: 0;
   transition: opacity 0.3s ease;
   gap: 6px;
   padding: 30px;
   box-sizing: border-box;
   text-align: start;
+  p {
+    color: var(--boarder-color);
+  }
 }
 
 .kontakt_info {
@@ -200,7 +199,6 @@ img {
 }
 .skills {
   max-width: 500px;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -219,8 +217,16 @@ img {
   }
 }
 
-.software img {
+.software svg {
   width: 60px;
+  height: auto;
+  color: var(--boarder-color);
+  color: var(--boarder-color);
+  fill: currentColor;
+  object-fit: contain;
+}
+.software svg path {
+  fill: currentColor;
 }
 button {
   border: 0.5 solid var(--boarder-color);
@@ -234,9 +240,6 @@ button {
 }
 button:hover {
   opacity: 80%;
-}
-svg {
-  color: var(--boarder-color);
 }
 @media screen and (max-width: 768px) {
   .landing {
